@@ -1,0 +1,13 @@
+<!--pages/shareappmessage/index.wxml-->
+<view class="shareapp" wx:if="{{show}}">
+    <view class="shareapp-main">
+        <view class="shareapp-main_title">情侣空间邀请</view>
+        <view class="shareapp-main_content">
+            邀请宝宝加入情侣空间，嘻嘻！
+        </view>
+        <view class="shareapp-main_button">
+            <navigator class="shareapp-main_button_Refuse" target="miniProgram" open-type="exit">拒绝加入</navigator>
+            <view class="shareapp-main_button_confirm" bindtap="Confirm">确认加入</view>
+        </view>
+    </view>
+</view>

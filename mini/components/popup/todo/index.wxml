@@ -1,0 +1,45 @@
+<!--components/popup/todo/index.wxml-->
+<view class="dom" hidden="{{hide}}" bindtap="hidepopup" data-canclose="{{true}}">
+  <view class="menu">
+    <!-- header -->
+    <view class="header">
+      <image class="cover" src="../../../public/imgs/letter.jpg" />
+      <view class="price"> 状态
+        <switch checked="{{item.isComplete}}" bindchange="switchChange" />
+      </view>
+      <view class="close-btn" bindtap="buttonhidepopup">
+        <view class='.xxl'>x</view>
+      </view>
+    </view>
+
+    <!-- content -->
+    <scroll-view class="content" scroll-y>
+      <view class="add">
+        <view class="add_title">
+          <view class="add_title_size">标题</view>
+          <input bindinput="inputTitle" disabled="{{contentshow=='true'? false : true}}" class="add_title_inp" placeholder="快来写下你的愿望吧！" value="{{item.title}}" type="text" />
+        </view>
+        <view class="add_content">
+          <view class="add_content_title">更多信息</view>
+          <view class="add_content_main">
+            <textarea disabled="{{contentshow=='true'? false : true}}" class="add_content_main_text" bindblur="bindinput" placeholder="{{textarea}}" value="{{item.msg}}" confirm-type="return" />
+          </view>
+        </view>
+        <view class="add_photo">
+          <view class="add_photo_title">照片</view>
+          <view class="add_photo_main">
+            <van-uploader accept="image" max-count="9" file-list="{{ item.fileList }}" bind:after-read="afterRead" bind:delete="delete_upload" multiple />
+          </view>
+        </view>
+        <view class="add_button" bindtap="createtodo" wx:if="{{contentshow=='true'}}">
+          提交
+        </view>
+        <!-- <view wx:else>
+          <van-button class="add_button" type="warning">更新</van-button>
+        </view> -->
+
+
+      </view>
+    </scroll-view>
+  </view>
+</view>

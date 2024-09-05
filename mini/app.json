@@ -1,0 +1,37 @@
+{
+    "pages": [
+        "pages/home/index",
+        "pages/shareappmessage/index",
+        "pages/modification/index",
+        "pages/login/index",
+        "pages/minedata/index",
+        "pages/remember/index",
+        "pages/todo/index",
+        "pages/information/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "情侣空间",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#1485EE",
+        "selectedColor": "#FF514E",
+        "list": [
+            {
+                "pagePath": "pages/home/index",
+                "text": "Home",
+                "iconPath": "public/imgs/tab/tab1.png",
+                "selectedIconPath": "public/imgs/tab/tab1-active.png"
+            },
+            {
+                "pagePath": "pages/minedata/index",
+                "text": "我的",
+                "iconPath": "image/06.png",
+                "selectedIconPath": "image/066.png"
+            }
+        ]
+    },
+    "sitemapLocation": "sitemap.json"
+}

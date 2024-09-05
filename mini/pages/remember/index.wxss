@@ -1,0 +1,10 @@
+/* pages/remember/index.wxss */
+page {
+  background-color: #E7F1FC;
+}
+
+.floatFab {
+  position: fixed;
+  bottom: 50px;
+  right: 30px;
+}

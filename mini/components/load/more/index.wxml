@@ -1,0 +1,4 @@
+<!--components/load/more/index.wxml-->
+<view class='empty'>
+    <view class='~sm ~muted'>--{{ textInfo }}-</view>
+</view>

@@ -1,0 +1,28 @@
+/* pages/home/index.wxss */
+page {
+  background: #E7F1FC;
+}
+.iconSize {
+  width: 66px;
+  height: 66px;
+}
+
+.gif-wave {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+  z-index: 99;
+  mix-blend-mode: screen;
+  height: 100px;
+}
+.image {
+  width: 32Px;
+}
+
+.order{
+  height: 20px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow:0 0 10px rgba(0, 0, 0, 0.1);
+}

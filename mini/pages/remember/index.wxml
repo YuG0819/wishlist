@@ -1,0 +1,53 @@
+<!--pages/remember/index.wxml-->
+<View>
+  <!--纪念日*-->
+  <View class='pr20 pl20 pt10'>
+    <View class='pd20 bgWhite card shadow-lg bg-gradual-red' data-item="{{together}}" bind:tap="updateRemember">
+      <View class='at-row'>
+        <View class='at-col-1'>
+          <Text class='wx wx-tag brand' />
+        </View>
+        <View class='at-col-7'>
+          <View class='pd10'>
+            <Text class='xxxxs font-weight'>我们在一起已经</Text>
+          </View>
+        </View>
+        <View class='at-col-4'>
+          <View class='pd10 text-right'>
+            <Text class='xxxs'>{{togetherNum}}</Text>
+            <Text class='xxxxs pl10'>天</Text>
+          </View>
+        </View>
+      </View>
+    </View>
+
+    <!-- 浮动添加按钮 -->
+    <view class='floatFab'>
+      <view class='bg-gradual-green fb-icon' bindtap="isPlus">
+        <view class='.xxl'>+</view>
+      </view>
+    </view>
+  </View>
+  <!-- remember list -->
+  <view wx:if="{{remember.length > 0}}" class="pr20 pl20 pt10" wx:for="{{remember}}" wx:key="index">
+    <View  class='pd20 bgWhite card shadow-lg {{item.rememberColor}}' data-item="{{item}}" bind:tap="updateRemember">
+      <View class='at-row'>
+        <View class='at-col-1'>
+          <Text class='wx wx-tag brand' />
+        </View>
+        <View class='at-col-7'>
+          <View class='pd10'>
+            <Text class='xxxxs font-weight'>{{item.title}}</Text>
+          </View>
+        </View>
+        <View class='at-col-4'>
+          <View class='pd10 text-right'>
+            <Text class='xxxs'>{{item.day}}</Text>
+            <Text class='xxxxs pl10'>天</Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </view>
+
+</View>

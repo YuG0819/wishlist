@@ -1,0 +1,127 @@
+<!--pages/home/index.wxml-->
+<View class='index'>
+  <!--头部-->
+  <View class='pd20'>
+    <View class='pd20 card rel' style='opacity: 0.8;'>
+      <image class='wd100 ht100 common-bg card' src="../../public/imgs/home_bg.jpg" />
+      <View class='at-row'>
+        <View class='at-col-3 text-center'>
+          <image class='avatar-normal' src="{{auth.user.avatarUrl}}" />
+          <View>
+            <Text class='xxxxs'>{{auth.user.nickName}}</Text>
+          </View>
+        </View>
+
+        <View class='at-col-6 text-center'>
+          <View>
+            <Text class='xxxxs font-weight'>我们在一起</Text>
+          </View>
+          <View>
+            <Text class='xxxs plr20 brand font-weight'>{{isBind ? together:"xxx"}}</Text>
+            <Text class='xxxxs'>天</Text>
+          </View>
+        </View>
+
+        <View class='at-col-3 text-center'>
+          <View>
+            <image class="avatar-normal" src="{{isBind ? auth.bindUser.avatarUrl : 'https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132'}}" />
+            <View>
+              <Text class='xxxxs'>{{isBind ? auth.bindUser.nickName : "邀请TA吧"}}</Text>
+            </View>
+          </View>
+        </View>
+      </View>
+      <image class='gif-wave' lazyLoad src="../../public/imgs/user/wave.gif" mode='scaleToFill' />
+    </View>
+    <View class='order bgWhite' />
+  </View>
+
+  <!--内容部分-->
+  <View class='pd20'>
+    <View class='at-row at-row--wrap'>
+      <View class='at-col-6'>
+        <View class='pr5'>
+          <View class='at-row-2 bgWhite card shadow-lg' bindtap="goRemember">
+            <View class='at-col-7'>
+              <View class='pd5'>
+                <View class='pd5'>
+                  <Text class='xxxxs font-weight'>纪念日</Text>
+                </View>
+                <View class='pd5'>
+                  <Text class='xxxs major font-weight pr5'>{{count.remember}}</Text>
+                  <Text class='xxxxs weak'>个</Text>
+                </View>
+              </View>
+            </View>
+            <View class='at-col-5 text-center'>
+              <image class='iconSize' src="../../public/imgs/svg/date.svg" />
+            </View>
+          </View>
+        </View>
+      </View>
+      <View class='at-col-6'>
+        <View class='pr5'>
+          <!--添加点击时间-->
+          <View class='at-row bgWhite card shadow-lg' bindtap="goTodo">
+            <View class='at-col-7'>
+              <View class='pd5'>
+                <View class='pd5'>
+                  <Text class='xxxxs font-weight'>愿望清单</Text>
+                </View>
+                <View class='pd5'>
+                  <Text class='xxxs major font-weight pr5'>{{count.todo}}</Text>
+                  <Text class='xxxxs weak'>个</Text>
+                </View>
+              </View>
+            </View>
+            <View class='at-col-5 text-center'>
+              <image class='iconSize' src="../../public/imgs/svg/todo.svg" />
+            </View>
+          </View>
+        </View>
+      </View>
+
+      <!-- <View class='at-col-6 pt10'>
+        <View class='pr5'>
+          <View class='at-row bgWhite card shadow-lg' bindtap="goPhoto">
+            <View class='at-col-7'>
+              <View class='pd5'>
+                <View class='pd5'>
+                  <Text class='xxxxs font-weight'>共享相册</Text>
+                </View>
+                <View class='pd5'>
+                  <Text class='xxxs major font-weight pr5'>999</Text>
+                  <Text class='xxxxs weak'>个</Text>
+                </View>
+              </View>
+            </View>
+            <View class='at-col-5 text-center'>
+              <image class='iconSize' src="../../public/imgs/svg/photo.svg" />
+            </View>
+          </View>
+        </View>
+      </View>
+      <View class='at-col-6 pt10'>
+        <View class='pr5'>
+          <View class='at-row bgWhite card shadow-lg' bindtap="goTravel">
+            <View class='at-col-7'>
+              <View class='pd5'>
+                <View class='pd5'>
+                  <Text class='xxxxs font-weight'>旅游足迹</Text>
+                </View>
+                <View class='pd5'>
+                  <Text class='xxxs major font-weight pr5'>999</Text>
+                  <Text class='xxxxs weak'>个</Text>
+                </View>
+              </View>
+            </View>
+            <View class='at-col-5 text-center'>
+              <image class='iconSize' src="../../public/imgs/svg/travel.svg" />
+            </View>
+          </View>
+        </View>
+      </View> -->
+    </View>
+  </View>
+
+</View>

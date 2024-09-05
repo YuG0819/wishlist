@@ -1,0 +1,17 @@
+/* pages/information/index.wxss */
+page {
+  background-color: #E7F1FC;
+}
+
+.avatar-wrapper {
+  padding: 0;
+  width: 56rpx !important;
+  border-radius: 8rpx;
+  margin-right: 20rpx;
+}
+
+.avatar {
+  display: block;
+  width: 56rpx;
+  height: 56rpx;
+}

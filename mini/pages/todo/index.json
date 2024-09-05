@@ -1,0 +1,12 @@
+{
+    "usingComponents": {
+      "YLLoadMore":"../../components/load/more",
+      "YLSeparator":"../../components/separator",
+      "YLTodoPopUp":"../../components/popup/todo",
+      "van-button":"@vant/weapp/button/index",
+      "van-icon":"@vant/weapp/icon/index"
+    },
+    "navigationBarTitleText": "愿望清单",
+    "enablePullDownRefresh":true,
+    "backgroundTextStyle":"dark"
+}

@@ -1,0 +1,2 @@
+<!--components/separator/index.wxml-->
+<view class='index' style="height: {{height}}; background-color: {{color}}" />

@@ -1,0 +1,46 @@
+<!--pages/todo/index.wxml-->
+<view>
+  <view class="at-row bgWhite card">
+    <block wx:for="{{tab}}" wx:key="index">
+      <view class="at-col-6 text-center" bindtap="onSwitchTab" data-index="{{index}}">
+        <view class="{{curIdx === index ? 'bg-gradual-primary' : ''}} pd5 card">
+          <view class="pb5">
+            <text class="{{curIdx === index ? 'white' : ''}} xxxxs">{{item.title}}</text>
+          </view>
+          <view class="flex-center p">
+            <view wx:if="{{curIdx === index}}" class="tabLine bgWhite"></view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <!-- todo list -->
+  <view wx:if="{{todo.length > 0}}" class='pd20'>
+    <view class="todo_main_container" wx:for="{{todo}}" wx:key="index">
+      <!-- <image wx:if="{{item.fileList.length > 0}}" class="cover" src="{{item.fileList[0]}}" /> -->
+      <view class="todo_main_container_size" data-item="{{item}}" data-id="{{item._id}}" bind:tap="update_current_item">{{item.title}}</view>
+      <!-- <van-icon name="delete-o" /> -->
+      <!-- <image class='iconSize' src="../../public/imgs/svg/chevron-right.svg" /> -->
+      <!-- <van-icon name="arrow-left" /> -->
+
+      <view wx:if="{{index < todo.length - 1}}">
+        <YLSeparator height="1rpx" color="#cdcdcd" />
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{todo.length === 0}}" class='pd20'>
+    <view class='bgWhite plr20 card'>
+      <YLLoadMore text-info='空空如也鸭~' />
+      <!-- <YLSeparator height="1rpx" color="#00ff00" /> -->
+    </view>
+  </view>
+
+  <!-- 浮动添加按钮 -->
+  <view class='floatFab'>
+    <view class='bg-gradual-green fb-icon' bindtap="isPlus">
+      <view class='.xxl'>+</view>
+    </view>
+  </view>
+  <!-- 添加愿望 -->
+  <YLTodoPopUp item="{{item}}" hide="{{hidepopup}}" bindhidePopup="isShowPlusClose"></YLTodoPopUp>
+</view>

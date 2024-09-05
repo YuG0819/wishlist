@@ -1,0 +1,4 @@
+/* components/separator/index.wxss */
+.index {
+  width: 100%;
+}

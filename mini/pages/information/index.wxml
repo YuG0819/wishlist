@@ -1,0 +1,48 @@
+<!--pages/information/index.wxml-->
+<view>
+  <view style="margin-top: 30rpx;">
+    <van-cell-group title="" inset id="{{auth.user._id}}">
+      <van-cell title="头像" is-link>
+        <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+          <image class="avatar" src="{{auth.user.avatarUrl}}"></image>
+        </button> 
+      </van-cell>
+      <van-cell title="昵称" is-link value="{{auth.user.nickName}}" bind:tap="updateNickName"/>
+      <van-cell title="性别" is-link value="{{auth.user.gender==0 ? '男' : '女' }}" bind:tap="switchSex"/>
+    </van-cell-group>
+  </view>
+  <view style="margin-top: 30rpx;" wx:if="{{auth.user.bindId}}">
+    <van-cell-group title="" inset>
+      <van-cell title="头像" is-link>
+        <button class="avatar-wrapper" bind:chooseavatar="onChooseAvatar">
+          <image class="avatar" src="{{auth.bindUser.avatarUrl}}"></image>
+        </button> 
+        </van-cell>
+      <van-cell title="昵称" is-link value="{{auth.bindUser.nickName}}" />
+      <van-cell title="性别" is-link value="{{auth.bindUser.gender==0 ? '男' : '女' }}" />
+    </van-cell-group>
+  </view>
+</view>
+
+<van-dialog
+  use-slot
+  title="请输入新的昵称"
+  show="{{ show }}"
+  show-cancel-button
+  bind:close="onClose"
+  bind:confirm="confirm"
+>
+  <van-cell-group>
+    <van-field value="{{ auth.user.nickName }}" bind:change="dialogInput" input-align="center" custom-style="background-color: white;"/>
+  </van-cell-group>
+</van-dialog>
+
+<van-popup
+  show="{{ showpopup }}"
+  position="bottom"
+  custom-style="height: 30%"
+>
+  <van-picker title="选择性别" show-toolbar columns="{{ columns }}"  bind:cancel="closePicker"
+  bind:confirm="confirmPicker"/>
+
+</van-popup>
